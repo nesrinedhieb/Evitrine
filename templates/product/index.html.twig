@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Produits{% endblock %}
+
+{% block body %}
+
+<h1>liste des produits</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Libellé</th>
+      <th scope="col">Image</th>
+    
+      <th scope="col">Prix Unitaires</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  {% for product in products %}
+    <tr>
+      
+      <th scope="row">{{product.lib}}</th>
+      <td><img alt="html image example" src="{{product.img}}"  /></td>
+      
+      <td>{{product.prix}}</td>
+      <td><a href="{{path('detail',{'id':product.id})}}" class="btn btn-primary">details</a>
+      </td> 
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

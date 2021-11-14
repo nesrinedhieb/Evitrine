@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formupdate 'bootstrap_4_layout.html.twig' %}
+
+{% block title  %}Editer le produit selectionné {% endblock %}
+
+{% block body %}
+
+{{ form_start(formupdate) }}
+{{ form_widget(formupdate) }}
+
+<a type="submit" href="{{path('product')}}"  class="btn btn-danger">Enregistrer</a>
+
+{{form_end(formupdate)}}
+
+{% endblock %}

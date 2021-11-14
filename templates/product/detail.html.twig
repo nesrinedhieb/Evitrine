@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List Produit{% endblock %}
+
+{% block body %}
+<h1>liste des produits</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Libellé</th>
+      <th scope="col">Image</th>
+      <th scope="col">Description</th>
+      <th scope="col">Prix Unitaires</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      
+      <td scope="row">{{products.lib}}</td>
+      <td>{{products.img}}</td>
+      <td>{{products.des}}</td>
+      <td>{{products.prix}}</td>
+    </tr>
+
+  </tbody>
+  
+</table>
+
+<a href="{{path('delete',{'id':products.id})}}" class="btn btn-primary">Supprimer</a>
+<a href="" type="button" class="btn btn-secondary">Ajouer au panier</a>
+<a href="{{ path('update', {'id':products.id}) }}" type="button" class="btn btn-success">Mettre à jour</a>
+{% endblock %}

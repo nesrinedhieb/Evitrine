@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formpro 'bootstrap_4_layout.html.twig' %}
+
+{% block title  %}Ajouter un produit {% endblock %}
+
+{% block body %}
+
+{{ form_start(formpro) }}
+{{ form_widget(formpro) }}
+
+<a type="submit" href="{{path('product')}}"  class="btn btn-danger">Enregistrer</a>
+
+{{form_end(formpro)}}
+
+{% endblock %}
